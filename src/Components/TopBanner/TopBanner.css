@@ -1,0 +1,15 @@
+.top-banner {
+    background: #FEF0E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #1a1a1a;
+    cursor: pointer;
+}
+
+.banner-emoji {
+    font-size: 18px;
+}

@@ -1,0 +1,297 @@
+.pap-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 16px;
+}
+
+.pap-modal {
+    background: #fff;
+    border-radius: 18px;
+    width: 640px;
+    max-width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 28px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+
+.pap-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pap-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.pap-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: color 0.2s, background 0.2s;
+}
+.pap-close:hover { color: #333; background: #f0f0f0; }
+
+.pap-error {
+    background: #fdecea;
+    color: #c62828;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ── Form ────────────────────────────────────────────────── */
+
+.pap-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pap-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.pap-input {
+    padding: 9px 13px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+.pap-input:focus { border-color: #e41e2b; }
+.pap-input--grow { flex: 1; }
+.pap-input--sm   { width: 80px; flex-shrink: 0; }
+
+.pap-textarea {
+    resize: vertical;
+    min-height: 72px;
+}
+
+.pap-color-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.pap-color-label input[type="color"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.pap-color-preview {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1.5px solid #e0e0e0;
+    transition: border-color 0.2s;
+}
+.pap-color-label:hover .pap-color-preview { border-color: #e41e2b; }
+
+/* ── Photos ──────────────────────────────────────────────── */
+
+.pap-photos-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.pap-photos-count {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 12px;
+    color: #666;
+}
+.pap-photos-hint {
+    margin-left: auto;
+    font-weight: 400;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.pap-drop-zone {
+    border: 2px dashed #e0e0e0;
+    border-radius: 12px;
+    transition: border-color 0.2s;
+    background: #fafafa;
+    cursor: pointer;
+}
+.pap-drop-zone:hover { border-color: #e41e2b; }
+.pap-drop-zone--empty {
+    padding: 32px;
+}
+
+.pap-drop-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #bbb;
+    pointer-events: none;
+}
+.pap-drop-placeholder p  { margin: 0; font-size: 14px; color: #888; }
+.pap-drop-placeholder span { font-size: 12px; color: #bbb; }
+
+/* ── Photos grid ─────────────────────────────────────────── */
+
+.pap-photos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+}
+
+.pap-photo-card {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+    cursor: grab;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+    user-select: none;
+}
+.pap-photo-card:active { cursor: grabbing; }
+.pap-photo-card:hover  { box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+
+.pap-photo-card--main {
+    border-color: #e41e2b;
+    width: 180px;
+    height: 180px;
+}
+
+.pap-photo-card--over {
+    transform: scale(1.04);
+    border-color: #e41e2b;
+    box-shadow: 0 6px 20px rgba(228, 30, 43, 0.25);
+}
+
+.pap-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.pap-main-badge {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: #e41e2b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.pap-photo-remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.pap-photo-remove:hover { background: #e41e2b; }
+
+.pap-drag-handle {
+    position: absolute;
+    bottom: 5px;
+    right: 6px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    pointer-events: none;
+    letter-spacing: -2px;
+}
+
+.pap-photo-add {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    border: 2px dashed #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 13px;
+    transition: border-color 0.2s, color 0.2s;
+}
+.pap-photo-add span:first-child { font-size: 26px; line-height: 1; }
+.pap-photo-add:hover { border-color: #e41e2b; color: #e41e2b; }
+
+/* ── Actions ─────────────────────────────────────────────── */
+
+.pap-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+
+.pap-btn {
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, opacity 0.2s;
+}
+.pap-btn--cancel {
+    background: #f0f0f0;
+    color: #555;
+}
+.pap-btn--cancel:hover { background: #e4e4e4; }
+
+.pap-btn--submit {
+    background: #e41e2b;
+    color: #fff;
+}
+.pap-btn--submit:hover:not(:disabled) { background: #c01020; }
+.pap-btn--submit:disabled { opacity: 0.6; cursor: not-allowed; }

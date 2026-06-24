@@ -1,0 +1,198 @@
+.pp-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.pp-modal {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 32px 32px;
+    width: 420px;
+    max-width: 95vw;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pp-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.2s;
+}
+.pp-close:hover { color: #333; }
+
+/* ── Avatar ─────────────────────────────────────────────── */
+
+.pp-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.pp-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e41e2b, #ff6b6b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #f0f0f0;
+    transition: border-color 0.2s;
+}
+.pp-avatar:hover { border-color: #e41e2b; }
+
+.pp-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pp-avatar-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.pp-avatar:hover .pp-avatar-overlay { opacity: 1; }
+
+.pp-uname {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 4px 0 0;
+}
+.pp-email {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+}
+
+.pp-del-avatar {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: #e41e2b;
+    cursor: pointer;
+    padding: 2px 0;
+    margin-top: 2px;
+    text-decoration: underline;
+}
+.pp-del-avatar:hover { color: #b01520; }
+
+/* ── Tabs ────────────────────────────────────────────────── */
+
+.pp-tabs {
+    display: flex;
+    gap: 4px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.pp-tab {
+    flex: 1;
+    padding: 8px 0;
+    border: none;
+    background: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.pp-tab.active {
+    background: #fff;
+    color: #e41e2b;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    font-weight: 600;
+}
+.pp-tab:hover:not(.active) { color: #333; }
+
+/* ── Flash ───────────────────────────────────────────────── */
+
+.pp-flash {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.pp-flash--ok  { background: #e6f4ea; color: #2d6a4f; }
+.pp-flash--err { background: #fdecea; color: #c62828; }
+
+/* ── Form ────────────────────────────────────────────────── */
+
+.pp-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pp-form label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: -2px;
+}
+
+.pp-form input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+.pp-form input:focus { border-color: #e41e2b; }
+
+.pp-btn {
+    margin-top: 8px;
+    width: 100%;
+    padding: 11px;
+    background: #e41e2b;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.pp-btn:hover:not(:disabled) { background: #c01020; }
+.pp-btn:disabled { opacity: 0.6; cursor: not-allowed; }

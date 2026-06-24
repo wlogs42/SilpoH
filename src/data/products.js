@@ -1,0 +1,118 @@
+export const products = [
+    {
+        id: 1, categoryId: 1,
+        name: "Сир Моцарелла Ферма 45%",
+        description: "Свіжий м'який сир з ніжним вершковим смаком. Ідеальний для піци, салатів та закусок.",
+        emoji: "🧀", bg: "#d4edd4",
+        price: 134.90, oldPrice: 159.90, discount: 16,
+        reviews: [
+            { id: 1, author: "Олена К.", rating: 5, text: "Дуже смачний сир, беру постійно!" },
+            { id: 2, author: "Михайло Д.", rating: 4, text: "Хороша якість, завжди свіжий." },
+        ],
+    },
+    {
+        id: 2, categoryId: 1,
+        name: "Молоко Простоквашино 2.5%",
+        description: "Пастеризоване молоко з натуральним смаком. Без консервантів.",
+        emoji: "🥛", bg: "#EAF4FB",
+        price: 42.90, oldPrice: 49.90, discount: 14,
+        reviews: [
+            { id: 1, author: "Наталія В.", rating: 5, text: "Завжди беру це молоко, смачне!" },
+        ],
+    },
+    {
+        id: 3, categoryId: 1,
+        name: "Йогурт Activia натуральний",
+        description: "Йогурт з живими культурами. Підтримує здоров'я кишечника щодня.",
+        emoji: "🍦", bg: "#F5F0E8",
+        price: 28.90, oldPrice: 35.90, discount: 20,
+        reviews: [],
+    },
+    {
+        id: 4, categoryId: 2,
+        name: "Персики",
+        description: "Соковиті стиглі персики з ніжним ароматом. Вирощені без ГМО.",
+        emoji: "🍑", bg: "#ffe8cc",
+        price: 44.90, oldPrice: 64.90, discount: 30,
+        reviews: [
+            { id: 1, author: "Іванна П.", rating: 5, text: "Дуже смачні та соковиті!" },
+            { id: 2, author: "Андрій М.", rating: 4, text: "Свіжі, рекомендую." },
+        ],
+    },
+    {
+        id: 5, categoryId: 2,
+        name: "Авокадо",
+        description: "Стиглі авокадо, багаті на корисні жири та вітаміни. Відмінно для гуакамоле.",
+        emoji: "🥑", bg: "#d6edcc",
+        price: 89.90, oldPrice: 109.90, discount: 18,
+        reviews: [
+            { id: 1, author: "Катерина Б.", rating: 5, text: "Завжди стиглі та смачні!" },
+        ],
+    },
+    {
+        id: 6, categoryId: 2,
+        name: "Полуниця",
+        description: "Солодка ароматна полуниця. Ідеальна для десертів та просто так.",
+        emoji: "🍓", bg: "#fde8e8",
+        price: 59.90, oldPrice: 79.90, discount: 25,
+        reviews: [],
+    },
+    {
+        id: 7, categoryId: 3,
+        name: "Шоколад Milka Mini Vanilla Swirl",
+        description: "Ніжний молочний шоколад Milka з ванільною начинкою. Набір міні-плиток.",
+        emoji: "🍬", bg: "#7B5EA7",
+        price: 309.90, oldPrice: 369.90, discount: 16,
+        reviews: [
+            { id: 1, author: "Соня Л.", rating: 5, text: "Обожнюю цей шоколад, дуже смачний!" },
+            { id: 2, author: "Олег В.", rating: 4, text: "Хороший шоколад, але дорогуватий." },
+        ],
+    },
+    {
+        id: 8, categoryId: 3,
+        name: "Батончик Поле Protein шоколад",
+        description: "Протеїновий батончик з шоколадною глазур'ю. 20г білка в кожному батончику.",
+        emoji: "🍫", bg: "#2a2420",
+        price: 44.90, oldPrice: 59.90, discount: 25,
+        reviews: [],
+    },
+    {
+        id: 9, categoryId: 4,
+        name: "Курка філе охолоджена",
+        description: "Свіже охолоджене куряче філе вищого ґатунку. Без антибіотиків.",
+        emoji: "🍗", bg: "#fdf0e0",
+        price: 179.90, oldPrice: 219.90, discount: 18,
+        reviews: [
+            { id: 1, author: "Роман Б.", rating: 4, text: "Якісне м'ясо, завжди свіже." },
+        ],
+    },
+    {
+        id: 10, categoryId: 4,
+        name: "Лосось філе охолоджений",
+        description: "Свіже філе лосося атлантичного. Багате на омега-3 жирні кислоти.",
+        emoji: "🐟", bg: "#fde8d8",
+        price: 349.90, oldPrice: 429.90, discount: 18,
+        reviews: [
+            { id: 1, author: "Оксана Д.", rating: 5, text: "Дуже свіжий та смачний лосось!" },
+            { id: 2, author: "Ігор С.", rating: 5, text: "Якість чудова, рекомендую." },
+        ],
+    },
+    {
+        id: 11, categoryId: 5,
+        name: "Хліб пшеничний нарізний",
+        description: "М'який пшеничний хліб, нарізаний скибочками. Без консервантів.",
+        emoji: "🍞", bg: "#fdf0d0",
+        price: 24.90, oldPrice: 29.90, discount: 17,
+        reviews: [],
+    },
+    {
+        id: 12, categoryId: 6,
+        name: "Сік Sandora апельсиновий",
+        description: "100% натуральний апельсиновий сік без додаткового цукру та консервантів.",
+        emoji: "🧃", bg: "#fff3cc",
+        price: 54.90, oldPrice: 64.90, discount: 15,
+        reviews: [
+            { id: 1, author: "Марія Т.", rating: 5, text: "Смачний та натуральний сік!" },
+        ],
+    },
+];

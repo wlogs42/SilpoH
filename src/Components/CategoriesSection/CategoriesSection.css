@@ -1,0 +1,51 @@
+.cats-pills-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 12px 20px 4px;
+}
+
+.cats-pills {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+}
+
+.cats-pills::-webkit-scrollbar { display: none; }
+
+.cats-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1.5px solid #e8e8e8;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: inherit;
+}
+
+.cats-pill:hover {
+    border-color: #F47B20;
+    background: #fff8f3;
+    color: #F47B20;
+}
+
+.cats-pill-icon { font-size: 18px; }
+
+.cats-pill-new {
+    background: #1A56F0;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+}

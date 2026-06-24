@@ -1,0 +1,104 @@
+.ud-wrapper {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 240px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+    padding: 18px 16px 12px;
+    z-index: 500;
+    animation: ud-appear 0.15s ease;
+}
+
+@keyframes ud-appear {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* стрілка вгорі */
+.ud-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    right: 22px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 6px rgba(0,0,0,0.06);
+}
+
+/* ── Аватар ── */
+.ud-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #F47B20, #e05a00);
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+/* ── Ім'я / email ── */
+.ud-info {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.ud-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.ud-email {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+}
+
+/* ── Розділювач ── */
+.ud-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 12px 0 8px;
+}
+
+/* ── Кнопки ── */
+.ud-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ud-action {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    font-family: inherit;
+    transition: background 0.12s;
+}
+
+.ud-action:hover { background: #f5f5f5; }
+
+.ud-action--admin { color: #1A56F0; }
+.ud-action--admin:hover { background: #EEF2FF; }
+
+.ud-action--logout { color: #e03e3e; }
+.ud-action--logout:hover { background: #fde8e8; }

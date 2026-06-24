@@ -1,0 +1,175 @@
+/* backdrop – dark overlay below the panel */
+.bm-backdrop {
+    position: fixed;
+    inset: 0;
+    top: 112px; /* banner + header */
+    z-index: 198;
+    background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+/* white panel */
+.bm-panel {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    right: 0;
+    z-index: 199;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    max-height: calc(100vh - 112px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bm-body {
+    padding: 32px 40px 24px;
+    flex: 1;
+}
+
+/* ── Top 3-col + promo ── */
+
+.bm-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 280px;
+    gap: 32px;
+}
+
+.bm-col-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.bm-link {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    padding: 4px 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+.bm-link:hover { color: #F47B20; }
+
+.bm-link--blue { color: #1A56F0; }
+.bm-link--blue:hover { color: #0d40c0; }
+
+/* promo card */
+.bm-promo-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bm-promo-text {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    max-width: 160px;
+}
+
+.bm-promo-people {
+    font-size: 60px;
+    position: absolute;
+    right: 12px;
+    bottom: 8px;
+    line-height: 1;
+}
+
+/* ── Divider ── */
+
+.bm-divider {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 24px 0 20px;
+}
+
+/* ── Bottom row ── */
+
+.bm-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 280px;
+    gap: 32px;
+}
+
+/* ── Footer ── */
+
+.bm-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.bm-footer-nav {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.bm-footer-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.bm-footer-link:hover { color: #F47B20; }
+
+.bm-footer-brands {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.bm-brand {
+    font-size: 11px;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: 0.5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 10px;
+    white-space: nowrap;
+}
+
+.bm-footer-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.bm-hotline-label {
+    font-size: 12px;
+    color: #888;
+}
+
+.bm-hotline-num {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 2px;
+}

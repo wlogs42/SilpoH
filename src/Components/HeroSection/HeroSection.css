@@ -1,0 +1,210 @@
+.hero-section {
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ---- Promo banner (left) ---- */
+
+.promo-banner {
+    flex: 1;
+    min-height: 310px;
+    transition: background 0.6s ease;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    top: -80px;
+    right: 60px;
+}
+
+.promo-banner::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    bottom: -40px;
+    right: 200px;
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+    padding: 44px 52px;
+    color: white;
+}
+
+.promo-title {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+}
+
+.promo-date {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+.promo-shop-btn {
+    margin-top: 22px;
+    background: #F47B20;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.promo-shop-btn:hover {
+    background: #e06a10;
+}
+
+.slider-btn {
+    position: absolute;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: #333;
+}
+
+.slider-btn--left { left: 12px; }
+.slider-btn--right { right: 12px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.45);
+    padding: 0;
+    transition: background 0.2s, width 0.2s;
+    cursor: pointer;
+}
+
+.dot--active {
+    background: white;
+    width: 22px;
+    border-radius: 4px;
+}
+
+/* ---- Quick links (right) ---- */
+
+.quick-links {
+    width: 330px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.ql-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+}
+
+.ql-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.ql-card--purple {
+    background: #EDE8F8;
+}
+
+.ql-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.ql-icon {
+    align-self: flex-end;
+    margin-top: 12px;
+}
+
+.ql-icon--silpo {
+    width: 52px;
+    height: 52px;
+    background: #4A2E7A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.ql-icon--sale {
+    width: 52px;
+    height: 52px;
+    background: #F47B20;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.ql-icon--week {
+    background: #F5D000;
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.ql-icon--recipe {
+    display: flex;
+}
