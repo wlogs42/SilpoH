@@ -25,10 +25,6 @@ def save_user_profile(sender, instance, **kwargs):
 
 
 class Category(models.Model):
-    """
-    Категорія товарів (М'ясо, Фрукти тощо).
-    Зберігається в таблиці store_category.
-    """
     name    = models.CharField(max_length=200)
     icon    = models.CharField(max_length=10, default='📦')
     theme   = models.CharField(max_length=7,  default='#f5f5f5')
@@ -45,11 +41,6 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    """
-    Товар. ForeignKey на Category → в БД колонка category_id.
-    on_delete=CASCADE → видалення категорії видаляє всі її товари.
-    related_name='products' → category.products.all()
-    """
     category    = models.ForeignKey(Category, on_delete=models.CASCADE,
                                     related_name='products')
     name        = models.CharField(max_length=300)
@@ -84,9 +75,6 @@ class ProductImage(models.Model):
 
 
 class Review(models.Model):
-    """
-    Відгук. Прив'язаний до товару і (необов'язково) до юзера.
-    """
     product    = models.ForeignKey(Product, on_delete=models.CASCADE,
                                    related_name='reviews')
     user       = models.ForeignKey(User, on_delete=models.SET_NULL,

@@ -52,10 +52,6 @@ class ChangePasswordSerializer(serializers.Serializer):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    """
-    Серіалізатор реєстрації.
-    write_only=True — пароль не повертається у відповіді.
-    """
     password  = serializers.CharField(write_only=True, min_length=6)
     password2 = serializers.CharField(write_only=True)
 

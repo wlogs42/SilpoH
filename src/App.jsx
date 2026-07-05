@@ -26,7 +26,6 @@ const App = () => {
         catch { return null; }
     });
 
-    // При наявності токена відновлюємо сесію через /api/auth/me/
     useEffect(() => {
         if (localStorage.getItem('token') && !user) {
             fetchMe().then(me => {

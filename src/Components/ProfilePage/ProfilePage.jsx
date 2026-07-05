@@ -10,7 +10,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
     const [profile, setProfile] = useState(null);
     const [tab, setTab] = useState('info');
 
-    // form states
     const [username, setUsername] = useState('');
     const [emailForm, setEmailForm] = useState({ email: '', password: '' });
     const [pwForm, setPwForm]       = useState({ old_password: '', new_password: '', new_password2: '' });
@@ -36,8 +35,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
         setTimeout(() => { setMsg(null); setError(null); }, 3500);
     };
 
-    // ── Avatar ──────────────────────────────────────────────────────────────
-
     const handleAvatarChange = async (e) => {
         const file = e.target.files[0];
         if (!file) return;
@@ -62,8 +59,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
         flash(true, 'Аватар видалено');
     };
 
-    // ── Username ─────────────────────────────────────────────────────────────
-
     const handleSaveName = async (e) => {
         e.preventDefault();
         if (!username.trim()) return;
@@ -80,8 +75,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
         }
     };
 
-    // ── Email ─────────────────────────────────────────────────────────────────
-
     const handleChangeEmail = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -97,8 +90,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
             flash(false, errMsg);
         }
     };
-
-    // ── Password ──────────────────────────────────────────────────────────────
 
     const handleChangePassword = async (e) => {
         e.preventDefault();
@@ -129,7 +120,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
             <div className="pp-modal">
                 <button className="pp-close" onClick={onClose}>✕</button>
 
-                {/* Avatar */}
                 <div className="pp-avatar-section">
                     <div
                         className="pp-avatar"
@@ -163,18 +153,15 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
                     )}
                 </div>
 
-                {/* Tabs */}
                 <div className="pp-tabs">
                     <button className={`pp-tab ${tab === 'info'     ? 'active' : ''}`} onClick={() => setTab('info')}>Профіль</button>
                     <button className={`pp-tab ${tab === 'email'    ? 'active' : ''}`} onClick={() => setTab('email')}>Email</button>
                     <button className={`pp-tab ${tab === 'password' ? 'active' : ''}`} onClick={() => setTab('password')}>Пароль</button>
                 </div>
 
-                {/* Flash */}
                 {msg   && <div className="pp-flash pp-flash--ok">{msg}</div>}
                 {error && <div className="pp-flash pp-flash--err">{error}</div>}
 
-                {/* Tab: info */}
                 {tab === 'info' && (
                     <form className="pp-form" onSubmit={handleSaveName}>
                         <label>Ім'я користувача</label>
@@ -190,7 +177,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
                     </form>
                 )}
 
-                {/* Tab: email */}
                 {tab === 'email' && (
                     <form className="pp-form" onSubmit={handleChangeEmail}>
                         <label>Новий email</label>
@@ -215,7 +201,6 @@ const ProfilePage = ({ user, onClose, onUserUpdate }) => {
                     </form>
                 )}
 
-                {/* Tab: password */}
                 {tab === 'password' && (
                     <form className="pp-form" onSubmit={handleChangePassword}>
                         <label>Поточний пароль</label>

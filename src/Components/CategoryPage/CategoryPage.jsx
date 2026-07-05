@@ -11,7 +11,6 @@ const CategoryPage = ({ categoryId, onBack }) => {
 
     const category = categories.find(c => c.id === categoryId);
 
-    // Завантажуємо товари з Django API при зміні categoryId
     useEffect(() => {
         setLoading(true);
         fetchProducts({ category: categoryId })
@@ -19,7 +18,6 @@ const CategoryPage = ({ categoryId, onBack }) => {
             .finally(() => setLoading(false));
     }, [categoryId]);
 
-    // Клік на товар → завантажуємо повні дані (з відгуками) і відкриваємо модал
     const openProduct = async (product) => {
         const full = await fetchProduct(product.id);
         setSelectedProduct(full);

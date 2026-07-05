@@ -4,7 +4,6 @@ import './UserDropdown.css';
 const UserDropdown = ({ user, onLogout, onAdminClick, onProfileClick, onClose }) => {
     const ref = useRef(null);
 
-    // Закриваємо при кліку поза дропдауном
     useEffect(() => {
         const handler = (e) => {
             if (ref.current && !ref.current.contains(e.target)) onClose();
@@ -17,7 +16,6 @@ const UserDropdown = ({ user, onLogout, onAdminClick, onProfileClick, onClose })
 
     return (
         <div className="ud-wrapper" ref={ref}>
-            {/* Аватар */}
             <div className="ud-avatar">
                 {user.avatar_url
                     ? <img src={user.avatar_url} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />

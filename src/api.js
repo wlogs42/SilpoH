@@ -5,8 +5,6 @@ const authHeaders = () => {
     return token ? { Authorization: `Token ${token}` } : {};
 };
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
-
 export async function register(data) {
     const res = await fetch(`${BASE}/auth/register/`, {
         method: 'POST',
@@ -37,8 +35,6 @@ export async function fetchMe() {
     return res.json();
 }
 
-// ── Categories ────────────────────────────────────────────────────────────────
-
 export async function fetchCategories() {
     const res = await fetch(`${BASE}/categories/`);
     return res.json();
@@ -68,8 +64,6 @@ export async function deleteCategory(id) {
         headers: { ...authHeaders() },
     });
 }
-
-// ── Products ──────────────────────────────────────────────────────────────────
 
 export async function fetchProducts(params = {}) {
     const query = new URLSearchParams(params).toString();
@@ -125,8 +119,6 @@ export async function deleteProductImage(imageId) {
         headers: { ...authHeaders() },
     });
 }
-
-// ── Profile ───────────────────────────────────────────────────────────────────
 
 export async function fetchProfile() {
     const res = await fetch(`${BASE}/auth/profile/`, { headers: { ...authHeaders() } });

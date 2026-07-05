@@ -19,8 +19,6 @@ const ProductAddPage = ({ categories, onClose, onSuccess }) => {
     const dragIdx = useRef(null);
     const fileRef = useRef(null);
 
-    // ── Додавання фото ──────────────────────────────────────────────────────
-
     const addFiles = (files) => {
         const slots = MAX_PHOTOS - photos.length;
         if (slots <= 0) return;
@@ -47,8 +45,6 @@ const ProductAddPage = ({ categories, onClose, onSuccess }) => {
             return p.filter((_, idx) => idx !== i);
         });
     };
-
-    // ── Drag-and-drop сортування ─────────────────────────────────────────────
 
     const onDragStart = (e, i) => {
         dragIdx.current = i;
@@ -79,8 +75,6 @@ const ProductAddPage = ({ categories, onClose, onSuccess }) => {
         dragIdx.current = null;
         setDragOver(null);
     };
-
-    // ── Сабміт ──────────────────────────────────────────────────────────────
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -123,7 +117,6 @@ const ProductAddPage = ({ categories, onClose, onSuccess }) => {
 
                 <form className="pap-form" onSubmit={handleSubmit}>
 
-                    {/* ── Основна інфо ── */}
                     <div className="pap-row">
                         <select className="pap-input pap-input--grow" required value={form.category} onChange={f('category')}>
                             <option value="">-- Оберіть категорію --</option>
@@ -147,7 +140,6 @@ const ProductAddPage = ({ categories, onClose, onSuccess }) => {
                         <input className="pap-input pap-input--sm" type="number" placeholder="Знижка %" value={form.discount} onChange={f('discount')} />
                     </div>
 
-                    {/* ── Фотографії ── */}
                     <div className="pap-photos-label">
                         Фотографії <span className="pap-photos-count">{photos.length}/{MAX_PHOTOS}</span>
                         <span className="pap-photos-hint">Перетягніть щоб змінити порядок</span>

@@ -20,13 +20,6 @@ from .serializers import (
 
 
 class RegisterView(APIView):
-    """
-    POST /api/auth/register/
-    Приймає: username, email, password, password2
-    Повертає: token + дані юзера
-    Логіка: серіалізатор валідує → create_user() хешує пароль
-             → Token.objects.create() генерує токен
-    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -44,12 +37,6 @@ class RegisterView(APIView):
 
 
 class LoginView(APIView):
-    """
-    POST /api/auth/login/
-    Приймає: username, password
-    Повертає: token
-    Django authenticate() перевіряє логін/пароль по хешу в БД.
-    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -77,10 +64,6 @@ class LoginView(APIView):
 
 
 class LogoutView(APIView):
-    """
-    POST /api/auth/logout/
-    Видаляє токен з БД — він більше не працює.
-    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -89,11 +72,6 @@ class LogoutView(APIView):
 
 
 class ForgotPasswordView(APIView):
-    """
-    POST /api/auth/forgot-password/
-    Приймає: email
-    Надсилає листа з посиланням для скидання пароля.
-    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -118,10 +96,6 @@ class ForgotPasswordView(APIView):
 
 
 class ResetPasswordView(APIView):
-    """
-    POST /api/auth/reset-password/
-    Приймає: uid, token, new_password
-    """
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -148,11 +122,6 @@ class ResetPasswordView(APIView):
 
 
 class MeView(APIView):
-    """
-    GET /api/auth/me/
-    Повертає дані поточного юзера по токену.
-    Використовується при старті застосунку щоб відновити сесію.
-    """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -173,10 +142,6 @@ class MeView(APIView):
 
 
 class ProfileView(APIView):
-    """
-    GET  /api/auth/profile/  — повний профіль
-    PATCH /api/auth/profile/ — оновити username і/або avatar
-    """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -193,10 +158,6 @@ class ProfileView(APIView):
 
 
 class AvatarView(APIView):
-    """
-    POST /api/auth/avatar/  — завантажити/замінити аватар
-    DELETE /api/auth/avatar/ — видалити аватар
-    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -222,10 +183,6 @@ class AvatarView(APIView):
 
 
 class ChangeEmailView(APIView):
-    """
-    POST /api/auth/change-email/
-    Приймає: email, password
-    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -238,10 +195,6 @@ class ChangeEmailView(APIView):
 
 
 class ChangePasswordView(APIView):
-    """
-    POST /api/auth/change-password/
-    Приймає: old_password, new_password
-    """
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
@@ -249,7 +202,6 @@ class ChangePasswordView(APIView):
         if s.is_valid():
             request.user.set_password(s.validated_data['new_password'])
             request.user.save()
-            # Оновлюємо токен щоб сесія лишилась активною
             from rest_framework.authtoken.models import Token
             Token.objects.filter(user=request.user).delete()
             token = Token.objects.create(user=request.user)
@@ -319,10 +271,6 @@ class ReviewCreateView(generics.CreateAPIView):
 
 
 class ProductImageListView(APIView):
-    """
-    GET  /api/products/<pk>/images/  — список фото
-    POST /api/products/<pk>/images/  — завантажити нове фото (max 7)
-    """
     def get_permissions(self):
         if self.request.method == 'GET':
             return [AllowAny()]
@@ -347,9 +295,6 @@ class ProductImageListView(APIView):
 
 
 class ProductImageDetailView(APIView):
-    """
-    DELETE /api/images/<pk>/  — видалити конкретне фото
-    """
     permission_classes = [IsAdminUser]
 
     def delete(self, request, pk):

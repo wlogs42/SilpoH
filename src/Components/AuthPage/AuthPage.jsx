@@ -29,7 +29,6 @@ const AuthPage = ({ onSuccess }) => {
                     onSuccess({ username: data.username });
                 }
             } else {
-                // DRF повертає об'єкт з помилками по полях
                 const msg = Object.values(data).flat().join(' ');
                 setError(msg);
             }
