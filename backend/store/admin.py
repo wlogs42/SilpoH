@@ -27,10 +27,10 @@ class ReviewInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display   = ['name', 'category', 'price', 'old_price', 'discount', 'created_at']
-    list_filter    = ['category']          # фільтр справа по категорії
+    list_filter    = ['category']          
     search_fields  = ['name', 'description']
     list_editable  = ['price', 'discount']
-    inlines        = [ReviewInline]        # відгуки всередині товару
+    inlines        = [ReviewInline]       
     readonly_fields = ['created_at']
 
 
