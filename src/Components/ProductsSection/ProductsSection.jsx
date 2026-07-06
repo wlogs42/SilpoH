@@ -3,7 +3,6 @@ import { fetchCategories, fetchProducts, fetchProduct } from '../../api';
 import ProductModal from '../ProductModal/ProductModal';
 import './ProductsSection.css';
 
-/* ── Картка товару ── */
 const ProductCard = ({ product, onClick }) => {
     const imgUrl = product.images?.[0]?.image_url;
     const hasDiscount = product.discount > 0;
@@ -39,7 +38,6 @@ const ProductCard = ({ product, onClick }) => {
     );
 };
 
-/* ── Секція однієї категорії ── */
 const CategorySection = ({ category, onProductOpen, onViewAll }) => {
     const [products, setProducts] = useState([]);
     const rowRef = useRef(null);
@@ -86,7 +84,6 @@ const CategorySection = ({ category, onProductOpen, onViewAll }) => {
     );
 };
 
-/* ── Головний компонент ── */
 const ProductsSection = ({ onCategoryClick }) => {
     const [categories, setCategories] = useState([]);
     const [selected, setSelected]     = useState(null);

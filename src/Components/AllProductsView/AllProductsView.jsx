@@ -34,7 +34,6 @@ const AllProductsView = ({ onSubcategoryClick }) => {
 
     return (
         <div className="apv-wrapper">
-            {/* Sidebar */}
             <aside className="apv-sidebar">
                 {categories.map(cat => (
                     <div
@@ -49,7 +48,6 @@ const AllProductsView = ({ onSubcategoryClick }) => {
                 ))}
             </aside>
 
-            {/* Content */}
             <main className="apv-content">
                 <h1 className="apv-title">{activeCategory?.name}</h1>
                 <div className="apv-grid">

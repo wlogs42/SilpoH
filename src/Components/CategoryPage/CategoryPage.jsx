@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
-import { categories } from "../../data/categories";
-import { fetchProducts, fetchProduct } from "../../api";
+import { fetchCategory, fetchProducts, fetchProduct } from "../../api";
 import ProductModal from "../ProductModal/ProductModal";
 import "./CategoryPage.css";
 
 const CategoryPage = ({ categoryId, onBack }) => {
+    const [category, setCategory]               = useState(null);
     const [products, setProducts]               = useState([]);
     const [loading, setLoading]                 = useState(true);
     const [selectedProduct, setSelectedProduct] = useState(null);
 
-    const category = categories.find(c => c.id === categoryId);
+    useEffect(() => {
+        fetchCategory(categoryId).then(data => setCategory(data));
+    }, [categoryId]);
 
     useEffect(() => {
         setLoading(true);

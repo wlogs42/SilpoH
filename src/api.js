@@ -40,6 +40,11 @@ export async function fetchCategories() {
     return res.json();
 }
 
+export async function fetchCategory(id) {
+    const res = await fetch(`${BASE}/categories/${id}/`);
+    return res.json();
+}
+
 export async function createCategory(data) {
     const res = await fetch(`${BASE}/categories/`, {
         method: 'POST',
